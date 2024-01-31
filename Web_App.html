@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address-Maker</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url(https://media.istockphoto.com/id/1079645426/photo/abstract-circular-particles-background.jpg?s=612x612&w=0&k=20&c=Jt_JYNEu83Au-4-CM7xLLxikm6ZWUyPYhvW_bELXtPs=);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            object-position: center;
+        }
+        h1{
+            text-align: center;
+            font-family: sans-serif;
+            color: rgb(255, 255, 255);
+            font-size: 35px;
+            padding: 10px;
+        }
+        .cont{
+            color: rgb(255, 255, 255);
+            /* border: 2px solid rgb(204, 204, 204); */
+            display: inline-block;
+            padding: 30px;
+            margin: 10px;
+            margin-left: 40px;
+            box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.147);
+        }
+        .cont div{
+            margin: 8px;
+            padding: 3px;
+        }
+        .cont label{
+            padding: 15px;
+            font-size: 18px;
+            font-family: sans-serif;
+
+        }
+        .cont input{
+            padding: 5px 22px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+        }
+        .cont textarea{
+            border: none;
+            outline: none;
+            border-radius: 4px;
+        }
+        .solve{
+            border: none;
+            outline: none;
+            padding: 5px 10px;
+            background-color: rgb(0, 253, 253);
+            color: rgb(0, 0, 0);
+            font-weight:bolder;
+            font-family: sans-serif;
+            /* border-radius: 8px; */
+            float: right;
+            margin: 7px;
+        }
+        .set{
+            height: 300px;
+            width: 300px;
+            border: 2px solid white;
+            display: inline-block;
+             float: right;
+            margin-top: 35px;
+            margin-right: 60px; 
+            
+        }
+        .set .set-nu{
+            color: antiquewhite;
+            margin: 2px;
+            padding: 2px;
+            margin-top: 20px;
+            
+        }
+        .set h4{
+            display: flex;
+            justify-content: center;
+            color: rgb(247, 222, 0);
+            font-family: sans-serif;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .set .det{
+            display: flex;
+            justify-content: center;
+            margin-top: 5px;
+            color: rgb(0, 252, 105);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .set .btn{
+            display: flex;
+            justify-content: space-around;
+            
+            
+            
+        }
+        .set .btn button{
+          margin-bottom: 2px;
+          padding: 3px 8px;
+          background-color: aqua;
+          margin-top: 100px;
+          border: none;
+          outline: none;
+          font-weight: 800;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          
+        }
+
+      
+    </style>
+</head>
+<body>
+    <h1>Address Maker</h1><hr>
+    <div class="cont">
+        <div>
+            <label for="">Name</label><br>
+            <input type="text" id="name" value="">
+        </div>
+
+        <div>
+            <label for="">Mobile-Number</label><br>
+            <input type="number" id="fs-num">
+        </div>
+
+        
+        <div>
+            <label for="">Second-Number</label><br>
+            <input type="number" id="se-num">
+        </div>
+
+        <div>
+            <label for="">E-mail</label><br>
+            <input type="email" id="email">
+        </div>
+
+        <div>
+            <label for="">Father-Name</label><br>
+            <input type="email" id="f-n">
+        </div>
+
+        <div>
+            <label for="">Address</label><br>
+           <textarea name="" id="area" cols="27" rows="5"></textarea>
+        </div>
+        <button onclick="nm()" class="solve">Submit</button>
+
+    </div>
+
+    <div class="set" id="wa">
+        <p class="set-nu" id="num1" ></p>
+        <p class="set-nu" id="num2" style="margin-top: 1px;"></p>
+        <h4 id="head"></h4>
+        <p class="det" id="fns"></p>
+        <p class="det" id="mail"></p>
+        <p class="det" id="add"></p>
+        <div class="btn">
+        <button class="bttn" onclick="pet()">Print</button>
+        <button class="bttn" onclick="wo()">Italic</button>
+        <button class="bttn" onclick="we()">Bold</button>
+        <button class="bttn" onclick="un()">Undo</button>
+        </div>
+    </div>
+
+    <script>
+       
+          function nm(){
+             var name = document.getElementById('name').value;
+             var hd = document.getElementById('head').innerHTML='Name:- ' + name;
+
+             var f = document.getElementById('fs-num').value;
+             var num1 = document.getElementById('num1').innerHTML='First-Number:- ' + f;
+
+              var s = document.getElementById('se-num').value;
+             var num1 = document.getElementById('num2').innerHTML='Second-Number:- ' + s;
+
+              var fna = document.getElementById('f-n').value;
+             var hd = document.getElementById('fns').innerHTML='Father-Name:- ' + fna;
+
+             var mail = document.getElementById('email').value;
+             var cny = document.getElementById('mail').innerHTML='E-mail:- ' + mail;
+
+               var adrs = document.getElementById('area').value;
+             var cny = document.getElementById('add').innerHTML='Address:- ' + adrs;
+        }
+          
+
+
+        function pet(){
+            print()
+        }
+        function we(){
+            var a = document.getElementById('wa').style.fontWeight ='bold'
+        }
+        function wo(){
+            var a = document.getElementById('wa').style.fontStyle ='italic'
+        }
+        function un(){
+            var a = document.getElementById('wa').innerText=" "
+        }
+    </script>
+</body>
+</html>
